@@ -1,0 +1,36 @@
+.address {
+    font-style: normal;
+
+    &__item:not(:first-child) {
+        margin-top: 9px;
+    }
+    &__map {
+        font-family: inherit;
+        font-size: 14px;
+        line-height: 1.71;
+        letter-spacing: 0.03em;
+        color: var(--text-on-dark-background);
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+        &:hover,
+        &:focus {
+            color: var(--accent-color);
+        }
+    }
+    &--top-indent {
+        margin-top: 20px;
+    }
+}  
+
+.address__mail,
+.address__tel {
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+    color: rgba(255, 255, 255, 0.6);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    &:hover,
+    &:focus {
+        color: var(--accent-color);
+    }
+}

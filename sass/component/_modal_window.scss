@@ -1,0 +1,182 @@
+.backdrop.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 40px;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    width: 528px;
+    min-height: 581px;
+    border-radius: 4px;
+
+    background-color: var(--first-background-color);
+
+    &__close-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+    
+            display: flex;
+            width: 30px;
+            height: 30px;
+            padding: 0;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            background-color: transparent;
+            cursor: pointer;
+            color: #000000;
+            transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+            &:hover,
+            &:focus {
+                color: var(--accent-color);
+            }
+        }
+        
+    &__close-icon {
+        width: 18px;
+        height: 18px;
+        fill: currentColor;
+    }
+    &__title {
+        display: block;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 1.15;
+        letter-spacing: 0.03em;
+        text-align: center;
+    }
+    &__form {
+        margin-top: 12px;
+    }
+}
+
+
+.form {
+    width: 448px;
+    height: 342px;
+    &__filed {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+        &:first-child {
+            margin-top: 0px;
+        }
+    }
+    &__label {
+        font-size: 12px;
+        line-height: 1.17;
+        letter-spacing: 0.01em;
+        color: var(--text-color);
+    }
+    &__wrap {
+        position: relative;
+    }
+    &__input {
+        width: 100%;
+        height: 40px;
+        margin-top: 4px;
+        padding: 11px 11px 11px 41px;
+    
+        border: 1px solid rgba(33, 33, 33, 0.2);
+        border-radius: 4px;
+        outline: none;
+        cursor: pointer;
+        transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        &:focus {
+            border-color: var(--accent-color);
+        }
+    }
+    &__input-icon {
+        position: absolute;
+        left: 12px;
+        bottom: calc(50% - 2px);
+        transform: translateY(50%);
+        transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        .form__input:focus + & {
+            fill: var(--accent-color);
+        }
+    }
+    &__checkbox {
+        margin-top: 20px;   
+    }
+    &__btn {
+        margin-top: 30px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    &__comments {
+        width: 100%;
+        height: 120px;
+        border: 1px solid rgba(33, 33, 33, 0.2);
+        border-radius: 4px;
+        margin-top: 4px;
+        padding: 12px 16px;
+        resize: none;
+        cursor: pointer;
+        outline: none;
+        transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        &:focus {
+            border-color: var(--accent-color);
+        }
+        &::placeholder {
+            font-size: 14px;
+            line-height: 1.14;
+            letter-spacing: 0.01em;
+            color: rgba(117, 117, 117, 0.5);
+        }
+    }
+   
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__label {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        line-height: 1.71;
+        letter-spacing: 0.03em;
+        color: var(--text-color);
+    }
+    &__check-icon {
+        display: flex;
+        width: 16px;
+        height: 15px;
+        border: 2px solid #212121;
+        border-radius: 2px;
+        background-origin: border-box;
+        justify-content: center;
+        align-items: center;
+        margin-right: 7px;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        .checkbox__policy:checked + .checkbox__label & {
+            border-color: var(--accent-color);
+            background-color: var(--accent-color);
+        }
+    }
+    &__check-link {
+        color: var(--accent-color);
+    }
+    &__icon {
+        fill: transparent;
+        .checkbox__policy:checked + .checkbox__label & {
+            fill: #EEEEEE;
+        }
+    }
+}
